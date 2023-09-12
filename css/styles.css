@@ -4146,7 +4146,7 @@ textarea.form-control-lg {
   --bs-navbar-color: rgba(255, 255, 255, 0.55);
   --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
   --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
-  --bs-navbar-active-color: #fff;
+  --bs-navbar-active-color: #eb0505;
   --bs-navbar-brand-color: #fff;
   --bs-navbar-brand-hover-color: #fff;
   --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
@@ -10912,6 +10912,7 @@ header.masthead .bg-circle-4 {
 
 @media (min-width: 992px) {
   header.masthead {
+    
     /*padding-top: calc(10rem + 55px);*/
     /*padding-bottom: 10rem;*/
   }
@@ -10944,3 +10945,47 @@ hr.line2 {
 .tucny {
   font-weight: bold;
 }
+.videjka {
+  max-width: 40vw;
+  position: relative;
+}
+
+.navbar-nav .nav-item:hover .nav-link {
+  color: #eb0505;
+}
+
+#indicator {
+  width: 20px; 
+  height: 30px;
+  border: 2px solid #fff;
+  border-radius: 50px; 
+  position: fixed;
+  bottom: 8%;
+  left: 50%;
+  border-color: #eb0505;
+  z-index: 2;
+}
+#indicator:before {
+  content: ""; 
+  position: absolute;
+  width: 5px; 
+  height: 5px;
+  bottom: 30px;
+  background: #eb0505; 
+  margin: auto;
+  left: 0; 
+  right: 0;
+  top: 30px; 
+  border-radius: 50%;
+  animation: animate 1s linear infinite; 
+}
+@keyframes animate {
+  0% {
+      opacity: 1; top: 5px;
+  }
+  100% {
+      opacity: 0; top: 20px;
+      transform: scale(0.8);
+  }
+}
+
