@@ -73,7 +73,7 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #ee0979;
+  --bs-link-color: #eb0505;
   --bs-link-hover-color: #be0761;
   --bs-code-color: #ee0979;
   --bs-highlight-bg: #fff3cd;
@@ -10862,8 +10862,8 @@ html {
 header.masthead {
   position: relative;
   overflow: hidden;
-  padding-top: calc(7rem + 72px);
-  padding-bottom: 7rem;
+  /*padding-top: calc(7rem + 72px);*/
+  /*padding-bottom: 7rem;*/
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
@@ -10912,8 +10912,8 @@ header.masthead .bg-circle-4 {
 
 @media (min-width: 992px) {
   header.masthead {
-    padding-top: calc(10rem + 55px);
-    padding-bottom: 10rem;
+    /*padding-top: calc(10rem + 55px);*/
+    /*padding-bottom: 10rem;*/
   }
   header.masthead .masthead-content .masthead-heading {
     font-size: 6rem;
@@ -10934,4 +10934,13 @@ hr.line1 {
 }
 hr.line2 {
   border: 4px solid #eb0505;
+}
+.head-video{
+  position: inherit;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.tucny {
+  font-weight: bold;
 }
