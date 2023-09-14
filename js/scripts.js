@@ -9,7 +9,7 @@ var scrollSpy = new bootstrap.ScrollSpy(document.body, {
     target: '.navbar'
   })
   window.onscroll = function(ev) {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    if ((window.scrollY) > 180) {
         var image = document.getElementById("indicator");
         var opacity = 0;
         image.style.opacity = opacity;
@@ -21,3 +21,14 @@ var scrollSpy = new bootstrap.ScrollSpy(document.body, {
 };
 document.getElementById("topw").style.fontWeight = "900";
 document.getElementById("topw").style.textDecorationLine = "underline";
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+const hiddenElements = document.querySelectorAll('.hiddenleft, .hiddenright');
+hiddenElements.forEach((el) => observer.observe(el));
