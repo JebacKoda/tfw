@@ -10931,7 +10931,22 @@ header.masthead .bg-circle-4 {
   font-family: 'Overpass', sans-serif;
   font-size: 2.75vh;
 }
-
+.textyL {
+  text-align: left;
+  color: #FFFFFF !important;
+  font-family: 'Overpass', sans-serif;
+  font-size: 2.75vh;
+  margin-top: 30px;
+}
+.textyL2 {
+  text-align: left;
+  color: #FFFFFF !important;
+  font-family: 'Overpass', sans-serif;
+  font-size: 2vh;
+}
+.pmargin {
+  margin: 50px;
+}
 hr.line1 {
   border-top: 2px solid #eb0505;
 }
@@ -10999,21 +11014,18 @@ hr.line2 {
 .hiddenleft{
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(-100%);
-  transition: all 1.5s;
 }
 .hiddenright {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
-  transition: all 1.5s;
-  overflow: hidden;
+  transition: all 1s;
 }
 
 .show{
   opacity: 1;
   filter: blur(0);
-  transform: translateX(0);
+  transition: all 1.5s;
 }
 
 #biggerpic {
@@ -11029,4 +11041,7 @@ hr.line2 {
 
 .relativation {
   position: relative;
+}
+.borderino {
+  border: 2px solid red;
 }

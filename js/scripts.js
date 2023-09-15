@@ -22,6 +22,12 @@ var scrollSpy = new bootstrap.ScrollSpy(document.body, {
 document.getElementById("topw").style.fontWeight = "900";
 document.getElementById("topw").style.textDecorationLine = "underline";
 
+const options = {
+    root: null,
+    threshold: 0,
+    rootMargin: "-50%"
+}
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         console.log(entry)
@@ -29,6 +35,14 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('show');
         }
     });
-});
-const hiddenElements = document.querySelectorAll('.hiddenleft, .hiddenright');
+}, options);
+const hiddenElements = document.querySelectorAll('.hiddenleft');
 hiddenElements.forEach((el) => observer.observe(el));
+
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+} else {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+}
