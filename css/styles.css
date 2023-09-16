@@ -10861,7 +10861,8 @@ html {
 }
 
 header.masthead {
-  margin-bottom: 200px;
+  height: 100vh;
+  margin-bottom: 80px;
   position: relative;
   overflow: hidden;
   /*padding-top: calc(7rem + 72px);*/
@@ -10961,6 +10962,7 @@ hr.line2 {
 }
 .tucny {
   font-weight: bold;
+  position: relative;
 }
 .videjka1 {
   max-width: 40vw;
@@ -11015,12 +11017,6 @@ hr.line2 {
   opacity: 0;
   filter: blur(5px);
 }
-.hiddenright {
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateX(-100%);
-  transition: all 1s;
-}
 
 .show{
   opacity: 1;
@@ -11034,9 +11030,8 @@ hr.line2 {
 
 #gradient {
   position: absolute;
-  z-index: 98;
-  bottom: 230px;
-  width: 100%;
+  left: 0;
+  bottom: 0;
 }
 
 .relativation {
@@ -11044,4 +11039,25 @@ hr.line2 {
 }
 .borderino {
   border: 2px solid red;
+}
+.box{
+  opacity: 0;
+}
+.reveal {
+  position: absolute;
+  opacity: 1;
+  height: 100%;
+  width: 0%;
+  background-color: blue;
+  left: 0;
+  animation: revelation 1200ms ease-out;
+}
+
+@keyframes revelation {
+  80% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }

@@ -25,7 +25,8 @@ document.getElementById("topw").style.textDecorationLine = "underline";
 const options = {
     root: null,
     threshold: 0,
-    rootMargin: "-50%"
+    rootMargin: "-15%"
+    
 }
 
 const observer = new IntersectionObserver((entries) => {
@@ -36,6 +37,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, options);
+
 const hiddenElements = document.querySelectorAll('.hiddenleft');
 hiddenElements.forEach((el) => observer.observe(el));
 
