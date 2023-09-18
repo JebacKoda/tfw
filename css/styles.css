@@ -2778,7 +2778,7 @@ textarea.form-control-lg {
   --bs-btn-font-size: 1rem;
   --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.5;
-  --bs-btn-color: #212529;
+  --bs-btn-color: #eb0505;
   --bs-btn-bg: transparent;
   --bs-btn-border-width: 1px;
   --bs-btn-border-color: transparent;
@@ -11060,4 +11060,25 @@ hr.line2 {
   100% {
     width: 0%;
   }
+}
+
+.content_inside {
+  display: none;
+}
+
+.content_inside_active {
+  display: block;
+}
+.margin-top {
+  margin-top: 50px;
+}
+
+.ybutton {
+  background: none;
+  border: none;
+  margin: 1rem;
+  padding: 0;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #eb0505;
 }
