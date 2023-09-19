@@ -64,3 +64,4 @@ buttonArray.addEventListener('click', function() {
     content_inside[i].classList.add('content_inside_active');  
   });
 });
+
