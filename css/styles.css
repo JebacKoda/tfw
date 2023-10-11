@@ -11133,3 +11133,7 @@ hr.line2 {
 .inputt:required {
 
 }
+
+.boxsize1 {
+  max-width: 320px;
+}
