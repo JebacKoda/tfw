@@ -10914,11 +10914,13 @@ header.masthead .bg-circle-4 {
 }
 
 @media (min-width: 992px) {
+  
   header.masthead {
     
     /*padding-top: calc(10rem + 55px);*/
     /*padding-bottom: 10rem;*/
   }
+  
   header.masthead .masthead-content .masthead-heading {
     font-size: 6rem;
   }
@@ -10998,6 +11000,7 @@ hr.line2 {
   right: 55%;
   bottom: 8%;
   z-index: 99;
+  pointer-events: none;
 }
 
 @keyframes animate {
@@ -11130,10 +11133,10 @@ hr.line2 {
   height: 5rem;
 }
 
-.inputt:required {
+/*.inputt:required {
 
 }
-
+*/
 .boxsize1 {
   max-width: 320px;
 }
@@ -11145,4 +11148,9 @@ hr.line2 {
 .contact-button {
   width: 100%;
   background-color: red;
+}
+
+.inactiveLink {
+  pointer-events: none;
+  cursor: default;
 }
