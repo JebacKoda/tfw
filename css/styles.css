@@ -10992,13 +10992,14 @@ hr.line2 {
   color: #eb0505;
 }
 
+#indicatordiv {
+  position: sticky;
+  z-index: 99;
+}
+
 #indicator {
   width: auto; 
-  height: 60px;
-  position: fixed;
-  left: 45%;
-  right: 55%;
-  bottom: 8%;
+  max-height: 60px;
   z-index: 99;
   pointer-events: none;
 }
