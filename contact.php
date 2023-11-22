@@ -32,12 +32,12 @@
                     class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" id="topw" href="https://jebackoda.github.io/tfw/index.html#nav1">O Top Fashion Week</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://jebackoda.github.io/tfw/pred.html#nav10">Předchozí ročníky</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://jebackoda.github.io/tfw/index.html#nav5">Návrháři</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://jebackoda.github.io/tfw/index.html#nav6">Pomáháme</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://jebackoda.github.io/tfw/team.html#nav9">Náš tým</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://jebackoda.github.io/tfw/index.html#nav7">Partneři</a></li>
+                            <li class="nav-item"><a class="nav-link" id="topw" href="/index.html#nav1">O Top Fashion Week</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/pred.html#nav10">Předchozí ročníky</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/index.html#nav5">Návrháři</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/index.html#nav6">Pomáháme</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/team.html#nav9">Náš tým</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/index.html#nav7">Partneři</a></li>
                             <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/TopFashionWeekcom/"><img class="navpic" src="assets/img/fb.png"></a></li>
                             <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/top_fashionweek/"><img class="navpic" src="assets/img/ig.png"></a></li>
                         </ul>
@@ -68,14 +68,13 @@
                 </div>
                 <div class="col-lg-6 order-lg-2">
                     <div class="leftal">
-                        <label class="texty2">Vaše přijmení</label>
+                        <label class="texty2">Vaše přijmení*</label>
                     </div>
                     <div class="leftal">
                         <p><input class="inputt" type="text" id="surname" name="visitor_surname" placeholder="Přijmení" pattern=[A-Z\sa-z]{2,20} required oninvalid="this.setCustomValidity('Prosíme vyplnit.')" oninput="setCustomValidity('')"/></p>
                     </div>
                 </div>
             </div>
-
             <div class="row gx-0 align-items-center">
                 <div class="col-lg-6 order-lg-1">
                     <div class="leftal">
@@ -98,7 +97,7 @@
             <div class="row gx-0 align-items-center">
                 <div class="col-lg-12 order-lg-2">
                     <div class="leftal">
-                        <label class="texty2">Zpráva</label>
+                        <label class="texty2">Zpráva*</label>
                     </div>
                     <div class="leftal">
                         <p><textarea class="inputtext inputt" id="message" name="visitor_message" placeholder="Zde napište vaši zprávu..." required oninvalid="this.setCustomValidity('Prosíme vyplnit.')" oninput="setCustomValidity('')"></textarea></p>
@@ -109,8 +108,22 @@
             <div class="row gx-0 align-items-center">
                 <div class="col-lg-12">
                     <div class="leftal">
-                        <p><input id="odeslat" type="submit" value="Odeslat" /></p>
+                        <p><input id="odeslat" type="submit" value="Odeslat" name="Odeslat" /></p>
                     </div>
+                    <?php
+                $msg = "";
+                if(isset($_GET['error']))
+                {
+                    $msg = "Prosíme doplnit celý formulář.";
+                    echo '<div class="alert alert-danger">'.$msg.'</div>';
+                }
+
+                if(isset($_GET['success']))
+                {
+                    $msg = "Vaše zpráva byla odeslána";
+                    echo '<div class="alert alert-success">'.$msg.'</div>';
+                }
+            ?>
                 </div>
             </div>
         </form>
