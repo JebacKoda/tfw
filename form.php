@@ -1,12 +1,13 @@
 <?php
- 
+ ini_set('SMTP','email.active24.com');
+ ini_set('smtp_port',465);
 if($_POST) {
     $visitor_name = "";
     $visitor_surname = "";
     $visitor_email = "";
     $visitor_message = "";
     $email_body = "<div>";
-    $recipient = "testerino@testerino.com";
+    $recipient = "info@top-fashionweek.com";
      
     if(isset($_POST['visitor_name'])) {
         $visitor_name = filter_var($_POST['visitor_name'], FILTER_UNSAFE_RAW);

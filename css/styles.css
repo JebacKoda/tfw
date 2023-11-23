@@ -10931,7 +10931,7 @@ header.masthead .bg-circle-4 {
 .texty {
   color: #FFFFFF !important;
   font-family: 'Overpass', sans-serif;
-  font-size: 2.75vh;
+  font-size: calc(1em + 0.4vw);
 }
 .texty1 {
   color: #FFFFFF !important;
@@ -10957,9 +10957,6 @@ header.masthead .bg-circle-4 {
   font-family: 'Overpass', sans-serif;
   font-size: 2vh;
 }
-.pmargin {
-  margin: 50px;
-}
 hr.line1 {
   border-top: 2px solid #eb0505;
 }
@@ -10977,14 +10974,11 @@ hr.line2 {
   position: relative;
 }
 .videjka1 {
-  max-width: 40vw;
   position: relative;
 }
 
 .videjka2 {
-  max-width: 40vw;
-  margin-left: -50%;
-  margin-left: max(-150px);
+  
 }
 
 .navbar-nav .nav-item:hover .nav-link {
@@ -11153,4 +11147,15 @@ hr.line2 {
 .inactiveLink {
   pointer-events: none;
   cursor: default;
+}
+
+.logo-fluid {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
+@media (max-width: 600px) {
+  .logo-fluid{
+    max-width: 35vw;
+  }
 }
