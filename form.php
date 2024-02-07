@@ -13,7 +13,7 @@ if(isset($_POST['Odeslat'])){
     if(empty($visitor_name) || empty($visitor_surname) || empty($visitor_email) || empty($visitor_tel) || empty($message)){
         header('location:contact.php?error');
     }else{
-        $to = "bojan.lukic@seznam.cz";
+        $to = "info@top-fashionweek.com";
 
         if(mail($to,$subject,$text)){
             header("location:contact.php?success");
