@@ -1,57 +1,25 @@
 <?php
- ini_set('SMTP','email.active24.com');
- ini_set('smtp_port',465);
-if($_POST) {
-    $visitor_name = "";
-    $visitor_surname = "";
-    $visitor_email = "";
-    $visitor_message = "";
-    $email_body = "<div>";
-    $recipient = "info@top-fashionweek.com";
-     
-    if(isset($_POST['visitor_name'])) {
-        $visitor_name = filter_var($_POST['visitor_name'], FILTER_UNSAFE_RAW);
-        $email_body .= "<div> 
-<label><b>Visitor Name:</b></label>&nbsp;<span>".$visitor_name."</span> 
-</div>";
-    }
+ 
+if(isset($_POST['Odeslat'])){
+    $visitor_name = $_POST['visitor_name'];
+    $visitor_surname = $_POST['visitor_surname'];
+    $visitor_email = $_POST['visitor_email'];
+    $visitor_tel = $_POST['tel'];
+    $message = $_POST['visitor_message'];
 
-    if(isset($_POST['visitor_surname'])) {
-        $visitor_surname = filter_var($_POST['visitor_surname'], FILTER_UNSAFE_RAW);
-        $email_body .= "<div> 
-<label><b>Visitor Surname:</b></label>&nbsp;<span>".$visitor_surname."</span> 
-</div>";
-    }
+    $subject = "Zpráva od: ". $visitor_name ." ". $visitor_surname;
+    $text = $message . "\r\n\r\n" . "Telefonní číslo: " . $visitor_tel . "\r\n" . "Email: " . $visitor_email;
 
-    if(isset($_POST['visitor_email'])) {
-        $visitor_email = str_replace(array("\r", "\n", "%0a", "%0d"), '', $_POST['visitor_email']);
-        $visitor_email = filter_var($visitor_email, FILTER_VALIDATE_EMAIL);
-        $email_body .= "<div> 
-<label><b>Visitor Email:</b></label>&nbsp;<span>".$visitor_email."</span> 
-</div>";
-    }
-     
-    if(isset($_POST['visitor_message'])) {
-        $visitor_message = htmlspecialchars($_POST['visitor_message']);
-        $email_body .= "<div> 
-<label><b>Visitor Message:</b></label> 
-<div>".$visitor_message."</div> 
-</div>";
-    }
-     
-    $email_body .= "</div>";
+    if(empty($visitor_name) || empty($visitor_surname) || empty($visitor_email) || empty($visitor_tel) || empty($message)){
+        header('location:contact.php?error');
+    }else{
+        $to = "info@top-fashionweek.com";
 
-    $headers  = 'MIME-Version: 1.0' . "\r\n"
-    .'Content-type: text/html; charset=utf-8' . "\r\n"
-    .'From: ' . $visitor_email . "\r\n";
-     
-    if(mail($recipient, $email_body, $headers)) {
-        echo "<p>Thank you for contacting us, $visitor_name. You will get a reply within 24 hours.</p>";
-    } else {
-        echo error_reporting(E_ALL & ~E_DEPRECATED);
+        if(mail($to,$subject,$text)){
+            header("location:contact.php?success");
+        }
     }
-     
-} else {
-    echo '<p>Something went wrong</p>';
+}else{
+    header("location:contact.php");
 }
 ?>
